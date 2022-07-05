@@ -1,0 +1,29 @@
+# Project: marycpp2
+# Makefile created by Dev-C++ 5.3.0.0
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = main.o $(RES)
+LINKOBJ  = main.o $(RES)
+LIBS     = -L"C:/Users/student/Documents/Dev-Cpp_Portable_5.3.0.0_azo/Dev-Cpp Portable/64位元/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
+INCS     = -I"C:/Users/student/Documents/Dev-Cpp_Portable_5.3.0.0_azo/Dev-Cpp Portable/64位元/MinGW64/x86_64-w64-mingw32/include"
+CXXINCS  = -I"C:/Users/student/Documents/Dev-Cpp_Portable_5.3.0.0_azo/Dev-Cpp Portable/64位元/MinGW64/x86_64-w64-mingw32/include"
+BIN      = marycpp2.exe
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) 
+RM       = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before marycpp2.exe all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o "marycpp2.exe" $(LIBS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
